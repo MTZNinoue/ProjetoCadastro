@@ -7,8 +7,8 @@
     $senha = $_POST['senha'];
 
     echo "<h1>Alteração de dados </h1>";
-    echo "<p>Usuário: $nome</p>";
-    $sql = "UPDATE usuário SET
+    echo "<p>Usuario: $nome</p>";
+    $sql = "UPDATE usuario SET
             nome_usuario='$nome',
             email_usuario='$email',
             fone_usuario='$fone',
