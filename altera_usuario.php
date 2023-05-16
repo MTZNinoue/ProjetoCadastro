@@ -17,7 +17,9 @@
     <!--http://localhost/PRW/Banco%20de%20dados/Aulas/altera_usuario?id_usuario=1 -->
     <h1>Cadastro de Usuarios - IFSP</h1>
     <form action="altera_usuario_exe.php" method="POST" >
-        <div>
+        <input name="id_usuario" type="hidden"
+            value="<?php echo $row['id_usuario'] ?>"> 
+    <div>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome"
             value="<?php echo $row['nome_usuario'] ?>">
