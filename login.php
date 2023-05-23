@@ -7,7 +7,7 @@
             WHERE email_usuario = '$email'
                 AND senha       = '$senha'";
 
-    $resultado = mysqli_query($con,$sql);
+    $result = mysqli_query($con,$sql);
     $rowcount =  mysqli_num_rows($result);
     if($rowcount > 0){
         include('criasessao.php');
