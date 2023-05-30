@@ -26,8 +26,13 @@
     
     <?php
      do{
+        if($row)
+        {
+            echo "<tr>";
+            echo "<td>" .$row['id_usuario'].            
      echo "<tr>";
      echo "<td>".$row['id_usuario']."</td>";
+     echo "<td><img src='" $row['foto']. "' width='80' height='100'/></td>";
      echo "<td>".$row['nome_usuario']."</td>";
      echo "<td>".$row['email_usuario']."</td>";
      echo "<td>".$row['fone_usuario']."</td>";

@@ -1,6 +1,14 @@
 <?php
 
     include("conexao.php");
+//upload foto
+$nome_foto = "";
+if(file_exists($_FILES['foto']['tmp_name']))
+$pasta_destino = 'fotos/';
+$extensao = strtolower(substr($_FILES['foto']['name'],-4));
+$nome_foto = $pasta_destino . date("Ymds-his") . $extensao;
+move_uploaded_file($_FILE['foto']['tmp_name'], $nome_foto);
+//fim upload
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $fone = $_POST['fone'];
@@ -18,13 +26,13 @@
     else{
 
     echo "<h1>Dados do Usuário</h1><br>";
-    echo "<h3>Nome: $nome</h3><br>";
+    echo "Nome: $nome<br>";
     echo "<h3>E-mail: $email</h3><br>";
     echo "<h3>Telefone: $fone</h3><br>";
     echo "<h3>Senha: $senha</h3><br>";
     
     $sql = "insert into usuario (nome_usuario, email_usuario,fone_usuario, senha)";
-    $sql .= "values ('$nome','$email','$fone','$senha')";
+    $sql .= "values ('$nome','$email','$fone','$senha','.$nome_foto.')";
 
     echo $sql."<br>";
     $result = mysqli_query($con, $sql);
